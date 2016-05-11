@@ -56,7 +56,7 @@ class LdstAgent {
       field.name     = name;
       field.icon     = src;
       field.ldst_id  = ldstId;
-      field.ldst_url = _createUrl(LDST_TOKEN.DB_ITEMY, ldstId);
+      field.ldst_url = _createUrl(LDST_TOKEN.DB_ITEM, ldstId);
 
       result.push(field);
     });
