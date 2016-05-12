@@ -1,1 +1,1 @@
-web: DEBUG=mean:* npm serve
+web: DEBUG=mean:* npm run serve
