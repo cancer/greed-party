@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "start": "nodemon server/app.js",
+    "serve": "node server/app.js",
     "createdb": "node --harmony scripts/create_db.js"
   },
   "author": "",
@@ -10,7 +12,8 @@
   "private": true,
   "devDependencies": {
     "bluebird": "^3.3.5",
-    "cheerio-httpcli": "^0.6.8"
+    "cheerio-httpcli": "^0.6.8",
+    "nodemon": "^1.9.2"
   },
   "dependencies": {
     "express": "^4.13.4",
