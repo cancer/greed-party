@@ -2,7 +2,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 const DB_NAME = 'greedParty';
-const DB_URL  = 'mongodb://localhost:27017/';
+const DB_URL  = process.env.MONGODB_URI || 'mongodb://localhost:27017/';
 
 class DBHelper {
   constructor() {
