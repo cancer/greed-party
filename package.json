@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "private": true,
+  "engines": {
+    "node": "6.1.0",
+    "npm": "3.8.6"
+  },
   "devDependencies": {
     "bluebird": "^3.3.5",
     "cheerio-httpcli": "^0.6.8",
