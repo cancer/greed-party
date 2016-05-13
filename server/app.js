@@ -1,17 +1,13 @@
 'use strict';
 
-const express = require('express');
+const app = require('./app/index').app;
+const db = require('./app/model/db');
+const controller = require('./app/controller');
 
-const app = express();
-const NAME_SPACE = '/api';
+db.connect((err) => {
+  if(err) console.error(err);
 
-app.get(`${NAME_SPACE}/duties/`, require('./modules/duties/index.js'));
-
-app.get(`${NAME_SPACE}/prices/`, require('./modules/prices/index.js'));
-app.get(`${NAME_SPACE}/prices/:id`, require('./modules/prices/index.js'));
-
-app.get('/', (req, res) => {
-  res.send('Hello Greed Party!');
+  controller.run();
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

@@ -1,0 +1,8 @@
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd7a" }, "name" : "真ラーヴァナ討滅戦", "ldst_id" : "ac208cc4254", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/ac208cc4254/", "has_prices" : false }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd7b" }, "name" : "真ビスマルク討滅戦", "ldst_id" : "ee48f880211", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/ee48f880211/", "has_prices" : false }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd7c" }, "name" : "ナイツ・オブ・ラウンド討滅戦", "ldst_id" : "3b38924e6f3", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/3b38924e6f3/", "has_prices" : false }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd7d" }, "name" : "極ビスマルク討滅戦", "ldst_id" : "271caea4df9", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/271caea4df9/", "has_prices" : true }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd7e" }, "name" : "極ラーヴァナ討滅戦", "ldst_id" : "4e79706dcf7", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/4e79706dcf7/", "has_prices" : true }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd7f" }, "name" : "蒼天幻想 ナイツ・オブ・ラウンド討滅戦", "ldst_id" : "516956c58db", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/516956c58db/", "has_prices" : true }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd80" }, "name" : "魔神セフィロト討滅戦", "ldst_id" : "4fe88686eb1", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/4fe88686eb1/", "has_prices" : false }
+{ "_id" : { "$oid" : "5733c4f53a444071219dfd81" }, "name" : "極魔神セフィロト討滅戦", "ldst_id" : "522c9eeb58a", "ldst_url" : "http://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/522c9eeb58a/", "has_prices" : true }
