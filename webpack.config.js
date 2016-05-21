@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './client/src/bootstrap.ts',
+    app: './client/src/browser.ts',
     vendor: [
       './node_modules/core-js/client/shim.min.js',
       './node_modules/zone.js/dist/zone.js',
