@@ -10,6 +10,7 @@
     "watch": "npm run  build -- --watch",
     "lite": "lite-server -c bs.config.js",
     "serve": "node server/app.js",
+    "nodemon": "nodemon server/app.js",
     "postinstall": "typings install",
     "tsc": "tsc -p config/tsconfig.json",
     "tsc:w": "tsc -p config/tsconfig.json -w",
