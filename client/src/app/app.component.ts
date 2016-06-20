@@ -10,9 +10,11 @@ import { MacroComponent }       from 'app/macro/macro.component';
   template: `
     <h1>FFXIV Greed Party</h1>
     <raid (changeRaid)="onChangeRaid($event)"></raid>
-    <add-player [prices]="currentPrices"></add-player>
-    <member-list></member-list>
-    <macro></macro>
+    <add-player
+      [prices]="currentPrices"
+      (addPlayer)="onAddPlayer($event)"></add-player>
+    <member-list [players]="currentPlayers"></member-list>
+    <macro [players]="currentPlayers"></macro>
   `,
   directives: [
     MemberListComponent,
@@ -25,10 +27,19 @@ import { MacroComponent }       from 'app/macro/macro.component';
 })
 export class AppComponent {
   currentPrices: any;
+  currentPlayers = [];
 
   constructor() { }
 
   onChangeRaid(prices) {
     this.currentPrices = prices;
+  }
+
+  onAddPlayer(player) {
+    this.currentPlayers.push(player);
+    this.currentPrices = this.currentPrices.reduce((m, price) => {
+      if(price.ldst_id !== player.price.ldst_id) m.push(price);
+      return m;
+    }, []);
   }
 }
