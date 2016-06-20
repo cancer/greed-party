@@ -9,8 +9,8 @@ import { MacroComponent }       from 'app/macro/macro.component';
   selector: 'app',
   template: `
     <h1>FFXIV Greed Party</h1>
-    <raid></raid>
-    <add-player></add-player>
+    <raid (changeRaid)="onChangeRaid($event)"></raid>
+    <add-player [prices]="currentPrices"></add-player>
     <member-list></member-list>
     <macro></macro>
   `,
@@ -19,6 +19,16 @@ import { MacroComponent }       from 'app/macro/macro.component';
     RaidComponent,
     AddPlayerComponent,
     MacroComponent
+  ],
+  providers: [
   ]
 })
-export class AppComponent { }
+export class AppComponent {
+  currentPrices: any;
+
+  constructor() { }
+
+  onChangeRaid(prices) {
+    this.currentPrices = prices;
+  }
+}
