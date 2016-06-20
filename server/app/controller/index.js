@@ -1,10 +1,12 @@
 'use strict';
-const app = require('../index.js').app;
+const app = require('../index').app;
 const fs  = require('fs');
 const path = require('path');
+const corser = require('corser');
 
 module.exports = {
   run: () => {
+    app.use(corser.create());
     require('./api/duties');
     require('./api/prices');
 
