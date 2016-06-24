@@ -1,27 +1,18 @@
 'use strict';
-const app = require('../index').app;
+const express = require('express');
 const fs  = require('fs');
 const path = require('path');
 const corser = require('corser');
 
+const gp = require('../index');
+const app = gp.app;
+
 module.exports = {
   run: () => {
     app.use(corser.create());
+    app.use(express.static(gp.config.staticPath));
+
     require('./api/duties');
     require('./api/prices');
-
-    app.use('/index.html', (req, res) => {
-      let _path = path.resolve(__dirname, '../../../client/dist/index.html');
-      fs.exists(_path, exist => {
-        if(exist) {
-          fs.readFile(_path, 'utf-8', (err, data) => {
-            res.send(data)
-          });
-        }
-        else {
-          res.sendStatus(404);
-        }
-      });
-    });
   }
 };
