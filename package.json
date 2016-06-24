@@ -4,10 +4,9 @@
   "description": "",
   "scripts": {
     "start": "npm run serve",
-    "rimraf": "rimraf",
-    "clean": "npm run rimraf -- client/dist",
+    "clean": "rimraf client/dist",
     "build": "webpack",
-    "prebuild": "npm run clean",
+    "prebuild": "ls -la node_modules && npm run clean",
     "watch": "npm run  build -- --watch",
     "lite": "lite-server -c bs.config.js",
     "serve": "npm run build && node server/app.js",
