@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "npm run serve",
-    "clean": "rimraf client/dist",
+    "rimraf": "rimraf",
+    "clean": "npm run rimraf -- client/dist",
     "build": "webpack",
     "prebuild": "npm run clean",
     "watch": "npm run  build -- --watch",
