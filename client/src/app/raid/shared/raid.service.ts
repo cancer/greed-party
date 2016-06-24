@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class RaidService {
-  private url = 'https://ffxiv-greed-party.herokuapp.com/api/duties/';
+  private url = '/api/duties/';
 
   constructor(private http: Http) { }
 
