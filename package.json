@@ -12,7 +12,6 @@
     "serve": "npm run build && node server/app.js",
     "serve:client": "concurrently \"npm run lite\" \"npm run watch\"",
     "nodemon": "nodemon server/app.js",
-    "postinstall": "typings install",
     "tsc": "tsc -p config/tsconfig.json",
     "tsc:w": "tsc -p config/tsconfig.json -w",
     "typings": "typings",
