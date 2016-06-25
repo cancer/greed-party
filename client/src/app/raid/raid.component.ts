@@ -9,7 +9,7 @@ import { PriceService } from './shared/price.service.ts';
 @Component({
   selector: 'raid',
   template: `
-    <select (change)="getPrices()" [(ngModel)]="selectedContent">
+    <select [(ngModel)]="selectedContent" #item (change)="getPrices(item.value)">
       <option
         *ngFor="let raid of raidList"
         [value]="raid.ldst_id">{{raid.name}}</option>
@@ -33,8 +33,8 @@ export class RaidComponent implements OnInit {
     private priceService: PriceService
   ) { }
 
-  getPrices() {
-    this.priceService.getPrices(this.selectedContent)
+  getPrices(priceId = this.selectedContent) {
+    this.priceService.getPrices(priceId)
       .then((prices) => {
         this.changeRaid.emit(prices);
       });
@@ -45,6 +45,7 @@ export class RaidComponent implements OnInit {
       .then((raidList) => {
         this.raidList = raidList;
         this.selectedContent = raidList[0].ldst_id;
+        this.getPrices();
       });
   }
 }
