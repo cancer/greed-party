@@ -1,4 +1,4 @@
-import { Input, Output, EventEmitter, Component } from '@angular/core';
+import { ChangeDetectionStrategy, OnChanges, Input, Output, EventEmitter, Component } from '@angular/core';
 import { CORE_DIRECTIVES }  from '@angular/common';
 
 import { Price } from '../raid/shared/price.ts';
@@ -17,14 +17,20 @@ import { Price } from '../raid/shared/price.ts';
       <button type="submit">追加</button>
     </form>
   `,
-  directives: [ CORE_DIRECTIVES ]
+  directives: [ CORE_DIRECTIVES ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AddPlayerComponent {
+export class AddPlayerComponent implements OnChanges {
   selectedPrice: string;
   playerName: string;
 
   @Input()  prices: Array<Price>;
   @Output() addPlayer = new EventEmitter();
+
+  ngOnChanges() {
+    if(!this.prices || this.prices.length === 0) return;
+    this.selectedPrice = this.prices[0].ldst_id;
+  }
 
   onSubmit() {
     this.addPlayer.emit({
@@ -33,7 +39,6 @@ export class AddPlayerComponent {
         return price.ldst_id === this.selectedPrice;
       })
     });
-    this.selectedPrice = this.prices[0].ldst_id;
     this.playerName = '';
   }
 }
